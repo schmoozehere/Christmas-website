@@ -1,4 +1,4 @@
-# Winter Wonderland Website
+# Winter Wonderland Website.
 
 A festive, interactive holiday-themed website featuring a Christmas countdown, snow animations, and seasonal content.
 
