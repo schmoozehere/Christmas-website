@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/snow.css">
+    <link rel="stylesheet" href="/css/countdown.css">
+    <link rel="stylesheet" href="/css/activities.css">
+    <link rel="stylesheet" href="/css/greetings.css">
+    <link rel="stylesheet" href="/css/santa.css">
+    <title>Winter Wonderland</title>
+  </head>
+  <body>
+    <div class="snow-container"></div>
+    <div class="santa"></div>
+    
+    <header class="hero">
+      <h1>Winter Wonderland</h1>
+      <p class="subtitle">Experience the Magic of Christmas</p>
+      <button class="cta-button">Explore the Magic</button>
+    </header>
+
+    <section class="countdown">
+      <h2>Christmas Countdown</h2>
+      <div class="countdown-timer">
+        <div class="time-block">
+          <span id="days">00</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="time-block">
+          <span id="hours">00</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="time-block">
+          <span id="minutes">00</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="time-block">
+          <span id="seconds">00</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="activities">
+      <h2>Holiday Activities</h2>
+      <div class="card-container">
+        <a href="/pages/gifts.html" class="card">
+          <h3>DIY Gift Ideas</h3>
+          <p>Create heartfelt presents for your loved ones</p>
+        </a>
+        <a href="/pages/recipes.html" class="card">
+          <h3>Holiday Recipes</h3>
+          <p>Delicious treats for the festive season</p>
+        </a>
+        <a href="/pages/events.html" class="card">
+          <h3>Winter Events</h3>
+          <p>Discover magical events near you</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="greetings">
+      <h2>Share Your Christmas Wishes</h2>
+      <form id="wishForm" class="wish-form">
+        <input type="text" placeholder="Write your Christmas wish..." required>
+        <button type="submit">Send Wish</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>Wishing you a magical holiday season! ❄️</p>
+    </footer>
+
+    <script type="module" src="/js/snow.js"></script>
+    <script type="module" src="/js/countdown.js"></script>
+    <script type="module" src="/js/form.js"></script>
+    <script type="module" src="/js/navigation.js"></script>
+  </body>
+</html>

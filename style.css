@@ -1,0 +1,124 @@
+/* Add these new styles to your existing style.css */
+
+.page-header {
+    background: linear-gradient(rgba(29, 53, 87, 0.8), rgba(29, 53, 87, 0.8)),
+                url('https://source.unsplash.com/1600x900/?winter,snow') center/cover;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: white;
+    color: var(--text-color);
+}
+
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Gift Ideas Page */
+.gift-item {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gift-item h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.gift-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.gift-item li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.gift-item li:before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Recipe Page */
+.recipe {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipe h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.recipe-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.recipe-details h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.recipe-details ul,
+.recipe-details ol {
+    padding-left: 1.5rem;
+}
+
+.recipe-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Events Page */
+.event {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.event-location {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-color);
+}
