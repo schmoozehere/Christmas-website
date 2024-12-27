@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Gift Ideas - Winter Wonderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snow"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gifts.html">DIY Gifts</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="events.html">Events</a>
+    </nav>
+
+    <div class="content">
+        <h1>DIY Gift Ideas</h1>
+        <div class="gift-grid">
+            <div class="gift-item">
+                <h3>Custom Photo Album</h3>
+                <p>Materials needed: Photo album, photos, decorative paper, stickers</p>
+                <ol>
+                    <li>Select your favorite photos</li>
+                    <li>Arrange them chronologically</li>
+                    <li>Add decorative elements</li>
+                    <li>Write personal captions</li>
+                </ol>
+            </div>
+            <div class="gift-item">
+                <h3>Handmade Candles</h3>
+                <p>Materials: Wax, wicks, containers, essential oils</p>
+                <ol>
+                    <li>Melt the wax</li>
+                    <li>Add fragrance</li>
+                    <li>Pour into containers</li>
+                    <li>Let cool and set</li>
+                </ol>
+            </div>
+            <div class="gift-item">
+                <h3>Knitted Scarf</h3>
+                <p>Materials: Yarn, knitting needles, scissors</p>
+                <ol>
+                    <li>Choose soft yarn</li>
+                    <li>Cast on stitches</li>
+                    <li>Knit in pattern</li>
+                    <li>Add fringe if desired</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wishing you a magical holiday season!</p>
+    </footer>
+
+    <style>
+        .content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gift-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .gift-item h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .gift-item ol {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .gift-item li {
+            margin: 0.5rem 0;
+        }
+    </style>
+
+    <script>
+        function createSnow() {
+            const container = document.querySelector('.snow');
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.style.cssText = `
+                    position: absolute;
+                    background: white;
+                    border-radius: 50%;
+                    width: ${Math.random() * 5}px;
+                    height: ${Math.random() * 5}px;
+                    left: ${Math.random() * 100}%;
+                    opacity: ${Math.random()};
+                    animation: fall ${Math.random() * 3 + 2}s linear infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                container.appendChild(snowflake);
+            }
+        }
+
+        createSnow();
+    </script>
+</body>
+</html>

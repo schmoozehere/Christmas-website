@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Recipes - Winter Wonderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snow"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gifts.html">DIY Gifts</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="events.html">Events</a>
+    </nav>
+
+    <div class="content">
+        <h1>Holiday Recipes</h1>
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <h3>Classic Gingerbread Cookies</h3>
+                <div class="recipe-details">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>3 cups flour</li>
+                        <li>1½ tsp ginger</li>
+                        <li>1½ tsp cinnamon</li>
+                        <li>½ cup butter</li>
+                        <li>½ cup brown sugar</li>
+                        <li>1 egg</li>
+                        <li>½ cup molasses</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Mix dry ingredients</li>
+                        <li>Cream butter and sugar</li>
+                        <li>Combine all ingredients</li>
+                        <li>Chill dough</li>
+                        <li>Roll and cut shapes</li>
+                        <li>Bake at 350°F for 10 minutes</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Hot Chocolate</h3>
+                <div class="recipe-details">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>2 cups milk</li>
+                        <li>2 oz dark chocolate</li>
+                        <li>2 tbsp cocoa powder</li>
+                        <li>2 tbsp sugar</li>
+                        <li>Whipped cream</li>
+                        <li>Marshmallows</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Heat milk until steaming</li>
+                        <li>Add chocolate and cocoa</li>
+                        <li>Whisk until smooth</li>
+                        <li>Add sugar to taste</li>
+                        <li>Top with cream and marshmallows</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Christmas Sugar Cookies</h3>
+                <div class="recipe-details">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>3 cups flour</li>
+                        <li>1 cup butter</li>
+                        <li>1½ cups sugar</li>
+                        <li>2 eggs</li>
+                        <li>2 tsp vanilla</li>
+                        <li>Royal icing</li>
+                    </ul>
+                    <h4>Instructions:</h4>
+                    <ol>
+                        <li>Cream butter and sugar</li>
+                        <li>Add eggs and vanilla</li>
+                        <li>Mix in flour</li>
+                        <li>Chill dough</li>
+                        <li>Roll and cut</li>
+                        <li>Bake and decorate</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wishing you a magical holiday season!</p>
+    </footer>
+
+    <style>
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .recipe-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .recipe-card h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .recipe-details h4 {
+            color: var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        .recipe-details ul, 
+        .recipe-details ol {
+            padding-left: 1.5rem;
+        }
+
+        .recipe-details li {
+            margin: 0.5rem 0;
+        }
+    </style>
+
+    <script>
+        function createSnow() {
+            const container = document.querySelector('.snow');
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.style.cssText = `
+                    position: absolute;
+                    background: white;
+                    border-radius: 50%;
+                    width: ${Math.random() * 5}px;
+                    height: ${Math.random() * 5}px;
+                    left: ${Math.random() * 100}%;
+                    opacity: ${Math.random()};
+                    animation: fall ${Math.random() * 3 + 2}s linear infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                container.appendChild(snowflake);
+            }
+        }
+        createSnow();
+    </script>
+</body>
+</html>

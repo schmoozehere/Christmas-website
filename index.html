@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Wonderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snow"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gifts.html">DIY Gifts</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="events.html">Events</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Merry Christmas!</h1>
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="activities">
+        <a href="gifts.html" class="activity-card">
+            <h3>DIY Gift Ideas</h3>
+            <p>Create memorable presents</p>
+        </a>
+        <a href="recipes.html" class="activity-card">
+            <h3>Holiday Recipes</h3>
+            <p>Cook up some Christmas magic</p>
+        </a>
+        <a href="events.html" class="activity-card">
+            <h3>Winter Events</h3>
+            <p>Discover local festivities</p>
+        </a>
+    </section>
+
+    <footer>
+        <p>Wishing you a magical holiday season!</p>
+    </footer>
+
+    <style>
+        /* styles.css */
+        :root {
+            --primary-red: #D42426;
+            --primary-green: #165B33;
+            --primary-gold: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: var(--primary-green);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary-red);
+            margin-bottom: 2rem;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            border-radius: 8px;
+            min-width: 100px;
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        .activities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+
+    <script>
+        function createSnow() {
+            const container = document.querySelector('.snow');
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.style.cssText = `
+                    position: absolute;
+                    background: white;
+                    border-radius: 50%;
+                    width: ${Math.random() * 5}px;
+                    height: ${Math.random() * 5}px;
+                    left: ${Math.random() * 100}%;
+                    opacity: ${Math.random()};
+                    animation: fall ${Math.random() * 3 + 2}s linear infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                container.appendChild(snowflake);
+            }
+        }
+
+        function updateCountdown() {
+			const now = new Date();
+			let christmas = new Date(now.getFullYear(), 11, 25);
+			
+			if (now > christmas) {
+				christmas = new Date(now.getFullYear() + 1, 11, 25);
+			}
+			
+			const diff = christmas - now;
+			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+			const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+			document.getElementById('days').textContent = String(days).padStart(2, '0');
+			document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+			document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+			document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+		}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+        createSnow();
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>

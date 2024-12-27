@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Events - Winter Wonderland</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="snow"></div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gifts.html">DIY Gifts</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="events.html">Events</a>
+    </nav>
+
+    <div class="content">
+        <h1>Local Winter Events</h1>
+        <div class="events-grid">
+            <div class="event-card">
+                <h3>Christmas Market</h3>
+                <p class="event-date">December 1-24, 2024</p>
+                <p class="event-time">4:00 PM - 9:00 PM</p>
+                <p class="event-location">City Center Plaza</p>
+                <p class="event-description">Traditional Christmas market featuring local artisans, food vendors, and holiday entertainment.</p>
+            </div>
+
+            <div class="event-card">
+                <h3>Ice Skating Festival</h3>
+                <p class="event-date">December 15, 2024</p>
+                <p class="event-time">1:00 PM - 8:00 PM</p>
+                <p class="event-location">Winter Sports Arena</p>
+                <p class="event-description">Family-friendly ice skating event with performances, lessons, and hot chocolate.</p>
+            </div>
+
+            <div class="event-card">
+                <h3>Holiday Light Show</h3>
+                <p class="event-date">December 1-31, 2024</p>
+                <p class="event-time">5:00 PM - 11:00 PM</p>
+                <p class="event-location">Central Park</p>
+                <p class="event-description">Spectacular light display featuring over 100,000 LED lights synchronized to holiday music.</p>
+            </div>
+
+            <div class="event-card">
+                <h3>Santa's Workshop</h3>
+                <p class="event-date">December 20-23, 2024</p>
+                <p class="event-time">10:00 AM - 6:00 PM</p>
+                <p class="event-location">Community Center</p>
+                <p class="event-description">Interactive workshop where children can meet Santa, make crafts, and enjoy holiday treats.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wishing you a magical holiday season!</p>
+    </footer>
+
+    <style>
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .event-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .event-card h3 {
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .event-date, 
+        .event-time, 
+        .event-location {
+            color: var(--primary-green);
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+
+        .event-description {
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+
+    <script>
+        function createSnow() {
+            const container = document.querySelector('.snow');
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.style.cssText = `
+                    position: absolute;
+                    background: white;
+                    border-radius: 50%;
+                    width: ${Math.random() * 5}px;
+                    height: ${Math.random() * 5}px;
+                    left: ${Math.random() * 100}%;
+                    opacity: ${Math.random()};
+                    animation: fall ${Math.random() * 3 + 2}s linear infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                container.appendChild(snowflake);
+            }
+        }
+        createSnow();
+    </script>
+</body>
+</html>
